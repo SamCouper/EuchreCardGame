@@ -8,4 +8,12 @@ To implement the game of Euchre, this project uses the following:
 *   **Team**: Represents a partnership of two 'Player' objects. It tracks the team's overall game score and the number of tricks won in current round.
 *   **Trick**: Represents a single hand of play (4 cards played in sequence). It compares the played 'Card' objects against the lead suit and the trump suit to determine which 'Player' wins the trick.
 *   **Round**: Manages the flow of a single round of Euchre: dealing cards, the bidding phase, playing 5 tricks, and calculating points to assign to the winning 'Team'.
-*   **EuchreGame (Main)**: The main driver class of the application. Will initialize the teams and players, run a loop of 'Round' instances, and track the overall game until one 'Team' reaches 10 points.
+*   **EuchreGame (Main)**: The main driver class of the application. Will initialize the teams and players, run a loop of 'Round' instances, and track the overall game user decides to end game.
+## Interface Functionality
+I used interfaces in a few different ways:
+* **Start of Game**: I used a textual interface at the start of the game to as the user how many rounds they would like to play (1, 3, 5).
+* **GamePlay**: A textual interface is also used to select what card you want to play each time you must play a card.
+* **PostGame**: After you have played your selected rounds, another textual interface pops up asking if you would like to play one more round or end the game.
+## Other Notes
+Can be hard to follow, especially at start of a round, as game lists 10 lines you have to read before you play. Otherwise, has good gameplay!
+Developer: Sam Couper
