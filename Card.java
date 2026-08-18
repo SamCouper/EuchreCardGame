@@ -2,7 +2,7 @@ package euchreGame;
 
 // Project Name: Euchre Game
 // Name: Sam Couper
-// Date: 08-10-2026
+// Date: 08-17-2026
 // Description: This class represents a single playing card in the Euchre Game. It stores the suit & rank of the card 
 // and provides methods to access & modify them.
 public class Card {
@@ -25,19 +25,34 @@ public class Card {
     public String getSuit() {
         return suit;
     }
-    
-    // Sets the suit of the card.
-    public void setSuit(String suit) {
-        this.suit = suit;
-    }
-    
- // Retrieves the rank of the card.
+ 
+    // Retrieves the rank of the card.
     public String getRank() {
         return rank;
     }
     
-    // Sets the rank of the card.
-    public void setRank(String rank) {
-        this.rank = rank;
+    //Determines if card is the Left Bower
+    public boolean isLeftBower(String trumpSuit) {
+        if (!rank.equals("Jack"))
+            return false;
+        if (trumpSuit.equals("Hearts") && suit.equals("Diamonds"))
+            return true;
+        if (trumpSuit.equals("Diamonds") && suit.equals("Hearts"))
+            return true;
+        if (trumpSuit.equals("Spades") && suit.equals("Clubs"))
+            return true;
+        if (trumpSuit.equals("Clubs") && suit.equals("Spades"))
+            return true;
+        return false;
+    }
+    
+    // Determines the effective suit (So Left Bower acts as trump)
+    public String effectiveSuit(String trumpSuit) {
+        return isLeftBower(trumpSuit) ? trumpSuit : suit;
+    }
+    
+    @Override
+    public String toString() {
+        return rank + " of " + suit;
     }
 }
